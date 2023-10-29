@@ -150,15 +150,8 @@ require('lazy').setup({
     },
   },
 
-  {
-    -- Theme inspired by Atom
-    'navarasu/onedark.nvim',
-    priority = 1000,
-    config = function()
-      vim.cmd.colorscheme 'onedark'
-      vim.cmd.highlight 'Normal guibg=none'
-    end,
-  },
+  'navarasu/onedark.nvim',
+  'tanvirtin/monokai.nvim',
 
   {
     -- Set lualine as statusline
@@ -166,8 +159,8 @@ require('lazy').setup({
     -- See `:help lualine.txt`
     opts = {
       options = {
-        icons_enabled = false,
-        theme = 'onedark',
+        icons_enabled = true,
+        theme = 'nana',
         component_separators = '|',
         section_separators = '',
       },
@@ -236,7 +229,7 @@ require('lazy').setup({
 -- NOTE: You can change these options as you wish!
 
 -- Spell check
-vim.opt.spell = true
+vim.opt.spell = false
 vim.opt.spelllang = 'en_us'
 
 -- Set highlight on search
@@ -589,3 +582,6 @@ cmp.setup {
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
+
+-- Theme 
+vim.cmd.colorscheme 'nana'
