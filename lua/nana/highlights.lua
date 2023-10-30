@@ -21,7 +21,7 @@ return {
     bg = palette.orange,
   },
   PmenuThumb = {
-    fg = palette.plum,
+    fg = palette.lavender,
     bg = palette.green,
   },
   PmenuSbar = {
@@ -82,16 +82,16 @@ return {
     fg = palette.diff_remove,
   },
   Constant = {
-    fg = palette.plum,
+    fg = palette.lavender,
   },
   Number = {
-    fg = palette.plum,
+    fg = palette.lavender,
   },
   Float = {
     fg = palette.orange,
   },
   Boolean = {
-    fg = palette.plum,
+    fg = palette.lavender,
   },
   Character = {
     fg = palette.yellow,
@@ -100,7 +100,7 @@ return {
     fg = palette.yellow,
   },
   Typedef = {
-    fg = palette.plum,
+    fg = palette.lavender,
   },
   Identifier = {
     fg = palette.white,
@@ -146,19 +146,19 @@ return {
 
   -- Treesitter
   ["@annotation"] = {
-    fg = palette.plum,
+    fg = palette.lavender,
   },
   ["@attribute"] = {
     fg = palette.green,
   },
   ["@boolean"] = {
-    fg = palette.plum,
+    fg = palette.lavender,
   },
   ["@character"] = {
     fg = palette.yellow,
   },
   ["@character.special"] = {
-    fg = palette.plum,
+    fg = palette.lavender,
   },
   ["@comment"] = {
     fg = palette.base6,
@@ -174,13 +174,13 @@ return {
     fg = palette.crimson,
   },
   ["@constant"] = {
-    fg = palette.plum,
+    fg = palette.lavender,
   },
   ["@constant.builtin"] = {
-    fg = palette.plum,
+    fg = palette.lavender,
   },
   ["@constant.macro"] = {
-    fg = palette.plum,
+    fg = palette.lavender,
   },
   ["@constructor"] = {
     fg = palette.green,
@@ -234,10 +234,10 @@ return {
     fg = palette.crimson,
   },
   ["@namespace"] = {
-    fg = palette.plum,
+    fg = palette.lavender,
   },
   ["@number"] = {
-    fg = palette.plum,
+    fg = palette.lavender,
   },
   ["@operator"] = {
     fg = palette.crimson,
@@ -268,16 +268,16 @@ return {
     fg = palette.yellow,
   },
   ["@string.escape"] = {
-    fg = palette.plum,
+    fg = palette.lavender,
   },
   ["@string.regex"] = {
-    fg = palette.plum,
+    fg = palette.lavender,
   },
   ["@string.special"] = {
-    fg = palette.plum,
+    fg = palette.lavender,
   },
   ["@symbol"] = {
-    fg = palette.plum,
+    fg = palette.lavender,
   },
   ["@tag"] = {
     fg = palette.crimson,

@@ -14,7 +14,7 @@ return {
   grey = '#a4a4a4',
   black = '#242424',
   crimson = '#f26573',
-  plum = '#8985f7',
+  lavender = '#b19af9',
   blue = '#74c9f7',
   green = '#82e57b',
   yellow = '#ddd86c',
