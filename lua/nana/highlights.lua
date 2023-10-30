@@ -131,7 +131,7 @@ return {
     fg = palette.crimson,
   },
   Special = {
-    fg = palette.white,
+    fg = palette.crimson,
   },
   SpecialChar = {
     fg = palette.crimson,

@@ -3,12 +3,12 @@ return {
   base1 = '#2a2730',
   base2 = '#27252b',
   base3 = '#342f3d',
-  base4 = '#54544f',
+  base4 = '#525248',
   base5 = '#53544d',
   base6 = '#a3a39b',
   base7 = '#afaea3',
   base8 = '#e2e2d5',
-  basewarn = '#4c3a26';
+  basewarn = '#4c2a26';
   border = '#a9a1b5',
   white = '#e0e0e0',
   grey = '#a4a4a4',
