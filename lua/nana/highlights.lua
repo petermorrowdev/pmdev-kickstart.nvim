@@ -384,9 +384,4 @@ return {
     fg = palette.yellow,
     bg = palette.base4,
   },
-
-  -- Local AUGroups
-  YankHighlight = {
-    bg = palette.yellow,
-  }
 }
