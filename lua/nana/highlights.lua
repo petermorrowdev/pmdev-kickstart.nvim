@@ -88,7 +88,7 @@ return {
     fg = palette.plum,
   },
   Float = {
-    fg = palette.plum,
+    fg = palette.orange,
   },
   Boolean = {
     fg = palette.plum,
@@ -201,7 +201,7 @@ return {
     fg = palette.white,
   },
   ["@float"] = {
-    fg = palette.plum,
+    fg = palette.orange,
   },
   ["@function"] = {
     fg = palette.green,
@@ -341,6 +341,13 @@ return {
   DiagnosticUnderlineWarn = {
     undercurl = true,
     sp = palette.orange,
+  },
+  DiagnosticFloatingError = {
+    fg = palette.red,
+  },
+  DiagnosticFloatingHint = {
+    fg = palette.blue,
+    bg = palette.base3,
   },
   CursorWord0 = {
     bg = palette.white,
