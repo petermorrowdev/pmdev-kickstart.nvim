@@ -9,6 +9,9 @@ return {
   NormalFloat = {
     bg = palette.base3,
   },
+  Directory = {
+    fg = palette.blue,
+  },
   Pmenu = {
     fg = palette.white,
     bg = palette.base3,
@@ -315,7 +318,7 @@ return {
     fg = palette.red,
   },
   DiagnosticSignWarn = {
-    fg = palette.yellow,
+    fg = palette.orange,
   },
   DiagnosticSignInfo = {
     fg = palette.white,
@@ -327,7 +330,7 @@ return {
     fg = palette.red,
   },
   DiagnosticVirtualTextWarn = {
-    fg = palette.yellow,
+    fg = palette.orange,
   },
   DiagnosticVirtualTextInfo = {
     fg = palette.white,
