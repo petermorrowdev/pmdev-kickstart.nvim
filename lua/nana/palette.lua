@@ -16,7 +16,7 @@ return {
   crimson = '#f26573',
   lavender = '#b19af9',
   blue = '#74c9f7',
-  green = '#82e57b',
+  green = '#5edb56',
   yellow = '#ddd86c',
   orange = '#fca746',
   red = '#fc643f',
