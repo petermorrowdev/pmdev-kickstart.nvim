@@ -410,5 +410,16 @@ return {
   -- gitsigns
   GitSignsCurrentLineBlame = {
     fg = palette.base4,
-  }
+  },
+
+  -- lualine
+  LuaLineDiffAdd = {
+    fg = palette.green,
+  },
+  LuaLineDiffChange = {
+    fg = palette.orange,
+  },
+  LuaLineDiffDelete = {
+    fg = palette.red,
+  },
 }
