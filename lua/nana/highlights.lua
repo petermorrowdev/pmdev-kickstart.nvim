@@ -314,14 +314,26 @@ return {
   dbui_tables = {
     fg = palette.white,
   },
+  DiagnosticError = {
+    fg = palette.red,
+  },
+  DiagnosticWarn = {
+    fg = palette.orange,
+  },
   DiagnosticSignError = {
     fg = palette.red,
+  },
+  DiagnosticHint = {
+    fg = palette.blue,
+  },
+  DiagnosticInfo = {
+    fg = palette.base4,
   },
   DiagnosticSignWarn = {
     fg = palette.orange,
   },
   DiagnosticSignInfo = {
-    fg = palette.white,
+    fg = palette.base4,
   },
   DiagnosticSignHint = {
     fg = palette.blue,
@@ -394,4 +406,9 @@ return {
     fg = palette.yellow,
     bg = palette.base4,
   },
+
+  -- gitsigns
+  GitSignsCurrentLineBlame = {
+    fg = palette.base4,
+  }
 }
