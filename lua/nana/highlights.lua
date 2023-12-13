@@ -146,6 +146,7 @@ return {
     fg = palette.grey,
   },
   Debug = { bg = palette.yellow },
+  Title = { fg = palette.green },
 
   -- Treesitter
   ["@annotation"] = {
