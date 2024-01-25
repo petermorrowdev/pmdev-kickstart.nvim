@@ -95,6 +95,25 @@ require('lazy').setup({
     },
   },
 
+  -- Linters
+  {
+    'mfussenegger/nvim-lint',
+    config = function()
+      local lint = require('lint')
+      lint.linters_by_ft = {
+        python = { 'mypy' },
+        ruby = { 'rubocop' },
+      }
+      vim.api.nvim_create_autocmd(
+        { 'BufEnter', 'BufWritePre', 'BufWritePost' },
+        {
+          callback = function()
+            lint.try_lint()
+          end,
+        }
+      )
+    end
+  },
   {
     -- Autocompletion
     'hrsh7th/nvim-cmp',
@@ -112,7 +131,7 @@ require('lazy').setup({
   },
 
   -- Useful plugin to show you pending keybinds.
-  { 'folke/which-key.nvim', opts = {} },
+  { 'folke/which-key.nvim',  opts = {} },
   {
     -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
@@ -244,7 +263,7 @@ vim.o.hlsearch = true
 
 -- Make line numbers default
 vim.wo.number = true
-vim.wo.colorcolumn = "88"
+vim.wo.colorcolumn = "79,88"
 vim.wo.relativenumber = true
 
 -- Enable mouse mode
@@ -363,7 +382,7 @@ local function live_grep_git_root()
   local git_root = find_git_root()
   if git_root then
     require('telescope.builtin').live_grep({
-      search_dirs = {git_root},
+      search_dirs = { git_root },
     })
   end
 end
@@ -373,6 +392,7 @@ vim.api.nvim_create_user_command('LiveGrepGitRoot', live_grep_git_root, {})
 -- See `:help telescope.builtin`
 vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
 vim.keymap.set('n', '<leader><space>', require('telescope.builtin').buffers, { desc = '[ ] Find existing buffers' })
+vim.keymap.set('n', '<leader>f', function() vim.lsp.buf.format { async = true } end, { desc = '[F]ormat using LSP' })
 vim.keymap.set('n', '<leader>/', function()
   -- You can pass additional configuration to telescope to change theme, layout, etc.
   require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
@@ -398,7 +418,8 @@ vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = 
 vim.defer_fn(function()
   require('nvim-treesitter.configs').setup {
     -- Add languages to be installed here that you want installed for treesitter
-    ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'javascript', 'typescript', 'vimdoc', 'vim', 'bash' },
+    ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'javascript', 'typescript', 'vimdoc', 'vim',
+      'bash' },
 
     -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
     auto_install = false,
@@ -470,11 +491,9 @@ local on_attach = function(_, bufnr)
   --
   -- In this case, we create a function that lets us more easily define mappings specific
   -- for LSP related items. It sets the mode, buffer and description for us each time.
-  local nmap = function(keys, func, desc)
-    if desc then
-      desc = 'LSP: ' .. desc
-    end
+  vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
+  local nmap = function(keys, func, desc)
     vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
   end
 
@@ -534,27 +553,7 @@ require('mason-lspconfig').setup()
 --  If you want to override the default filetypes that your language server will attach to you can
 --  define the property 'filetypes' to the map in question.
 local servers = {
-  -- clangd = {},
-  -- gopls = {},
-  pyright = {
-    enable = true,
-    python = {
-        analysis = {
-          autoSearchPaths = true,
-          diagnosticMode = "workspace",
-          typeCheckingMode = "basic",
-          useLibraryCodeForTypes = true
-        },
-        linting = {
-          mypyEnabled = true,
-          ruffEnabled = true,
-        }
-      }
-  },
-  -- rust_analyzer = {},
-  -- tsserver = {},
-  -- html = { filetypes = { 'html', 'twig', 'hbs'} },
-
+  -- Lua
   lua_ls = {
     Lua = {
       workspace = { checkThirdParty = false },
@@ -563,6 +562,13 @@ local servers = {
       -- diagnostics = { disable = { 'missing-fields' } },
     },
   },
+
+  -- Python
+  ruff_lsp = { enable = true },
+  jedi_language_server = { enable = true, diagnostics = {enable = true } },
+
+  -- Ruby
+  ruby_ls = { enable = true },
 }
 
 -- Setup neovim lua configuration
@@ -644,5 +650,5 @@ cmp.setup {
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
 
--- Theme 
+-- Theme
 vim.cmd.colorscheme 'nana'
