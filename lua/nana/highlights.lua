@@ -102,6 +102,9 @@ return {
   String = {
     fg = palette.yellow,
   },
+  Type = {
+    fg = palette.green,
+  },
   Typedef = {
     fg = palette.lavender,
   },
